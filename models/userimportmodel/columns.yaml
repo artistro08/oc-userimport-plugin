@@ -1,0 +1,17 @@
+#plugins/egerstudios/userimport/models/userimportmodel/columns.yaml
+columns:
+    email:
+        label: Email
+        type: text
+    firstname:
+        label: First Name
+        type: text
+    lastname:
+        label: Last Name
+        type: text
+    username:
+        label: Username (Optional)
+        type: text
+    phone:
+        label: Phone
+        type: text

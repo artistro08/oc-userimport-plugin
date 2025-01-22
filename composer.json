@@ -1,0 +1,8 @@
+{
+    "name": "egerstudios/userimport-plugin",
+    "type": "october-plugin",
+    "description": "Import users into Rainlab Users-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

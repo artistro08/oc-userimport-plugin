@@ -1,0 +1,29 @@
+# controllers/imports/create.htm
+<?= Form::open(['class' => 'layout']) ?>
+
+    <div class="layout-row">
+        <?= $this->formRender() ?>
+    </div>
+
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button
+                type="submit"
+                data-request="onProcessImport"
+                data-request-data="redirect:0"
+                data-hotkey="ctrl+s, cmd+s"
+                data-load-indicator="Importing users..."
+                class="btn btn-primary">
+                Import Users
+            </button>
+            <button
+                type="button"
+                data-request="onCancel"
+                data-disconnect-request
+                class="btn btn-default">
+                Cancel
+            </button>
+        </div>
+    </div>
+
+<?= Form::close() ?>

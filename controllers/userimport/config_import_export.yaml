@@ -1,0 +1,10 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: Import Users
+    modelClass: EgerStudios\UserImport\Models\UserImportModel
+    list: $/egerstudios/userimport/models/userimportmodel/columns.yaml
+    form: $/egerstudios/userimport/models/userimportmodel/fields.yaml
+    redirect: rainlab/user/users
