@@ -11,7 +11,7 @@ Import files with user data into October CMS plugin [RainLab.User](http://octobe
 
 ## Installation
 
-- Install the plugin [VojtaSvoboda.UserImportExport](http://octobercms.com/plugin/egerstudios-userimport)
+- Install the plugin [EgerStudios.UserImport](http://octobercms.com/plugin/egerstudios-userimport)
 - Import users by navigating to Users -> import
 
 
