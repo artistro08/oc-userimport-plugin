@@ -3,6 +3,7 @@
 use Backend\Models\ImportModel;
 use RainLab\User\Models\User;
 use RainLab\User\Models\UserGroup;
+use TokenRepositoryInterface;
 use Mail;
 use Schema;
 use Log;
@@ -24,7 +25,7 @@ class UserImportModel extends ImportModel
             // If first_name exists, it's v3, otherwise it's v2
             $this->isVersion2 = !Schema::hasColumn($userModel->getTable(), 'first_name');
         }
-        Log::info('isVersion2: ' . $this->isVersion2);
+
         return $this->isVersion2;
     }
 
@@ -57,7 +58,7 @@ class UserImportModel extends ImportModel
 
                 // Generate secure random password if not provided
                 if (empty($data['password'])) {
-                    $password = Str::random(12); // 12 characters for better security
+                    $password = Str::random(12) . mt_rand(); // 12 characters for better security + a random number
                     $data['password'] = $password;
                     $data['password_confirmation'] = $password;
                 }
@@ -70,10 +71,18 @@ class UserImportModel extends ImportModel
                 }
                 
                 
-                Log::info('Data', $data);
-                
                 // Create user
-                $user = User::updateOrCreate(['email' => $data['email']], $data);
+                $user = User::updateOrCreate(
+                    ['email' => $data['email'],
+                    'first_name' => $data['firstname'],
+                    'last_name'=> $data['lastname'],
+                    'password' => $data['password'],
+                    'is_guest' => true,
+                ]);
+
+                $user->convertToRegistered();
+                
+                
                 
                 
                 /**
@@ -89,12 +98,7 @@ class UserImportModel extends ImportModel
 
                     // Calculate new groups being added
                     $newGroups = array_diff($usersGroups, $existingGroupIds);
-                    if (!empty($newGroups)) {
-                        Log::info('Adding new groups for user ' . $user->email, [
-                            'new_groups' => $newGroups,
-                            'existing_groups' => $existingGroupIds
-                        ]);
-                    }
+                    if (!empty($newGroups)) {}
 
                     $allGroupIds = array_unique(array_merge($existingGroupIds, $usersGroups));
                     $user->groups()->sync($allGroupIds);
@@ -110,7 +114,7 @@ class UserImportModel extends ImportModel
                 }
                 
                 if ($sendWelcomeEmail) {
-                    Mail::queue('rainlab.user::mail.invite', $user->getNotificationVars(), function($message) use ($user) {
+                    Mail::queue('rainlab.user::mail.welcome', $user->getNotificationVars(), function($message) use ($user) {
                         $message->to($user->email, $user->full_name);
                     });
                 }
