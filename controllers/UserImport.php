@@ -1,4 +1,4 @@
-<?php namespace EgerStudios\UserImport\Controllers;
+<?php namespace Artistro08\UserImport\Controllers;
 
 use Backend\Classes\Controller;
 use ApplicationException;

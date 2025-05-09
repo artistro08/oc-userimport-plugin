@@ -1,29 +1,29 @@
-#plugins/egerstudios/userimport/models/userimportmodel/fields.yaml
+#plugins/artistro08/userimport/models/userimportmodel/fields.yaml
 fields:
 
     send_welcome_email:
-        label: egerstudios.userimport::lang.options.send_welcome_email
+        label: artistro08.userimport::lang.options.send_welcome_email
         type: checkbox
         span: left
         default: false
 
     auto_activate:
-        label: egerstudios.userimport::lang.options.auto_activate
+        label: artistro08.userimport::lang.options.auto_activate
         type: checkbox
         span: right
         default: false
     
     user_groups:
-        label: egerstudios.userimport::lang.options.user_groups
+        label: artistro08.userimport::lang.options.user_groups
         type: checkboxlist
         span: left
         options: getUserGroupOptions
 
     username_format:
-        label: egerstudios.userimport::lang.options.username_format
+        label: artistro08.userimport::lang.options.username_format
         type: dropdown
         options:
-            firstname.lastname: egerstudios.userimport::lang.options.username_format_firstname_lastname
-            firstinitial.lastname: egerstudios.userimport::lang.options.username_format_firstinitial_lastname
+            firstname.lastname: artistro08.userimport::lang.options.username_format_firstname_lastname
+            firstinitial.lastname: artistro08.userimport::lang.options.username_format_firstinitial_lastname
         span: full
         default: firstname.lastname

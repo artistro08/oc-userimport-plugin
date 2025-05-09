@@ -1,5 +1,5 @@
 # controllers/imports/config_form.yaml
 name: Import Users
-modelClass: EgerStudios\UserImport\Models\UserIMport
-form: $/egerstudios/userimport/models/userimport/fields.yaml
-defaultRedirect: egerstudios/userimport/userimport
+modelClass: Artistro08\UserImport\Models\UserIMport
+form: $/artistro08/userimport/models/userimport/fields.yaml
+defaultRedirect: artistro08/userimport/userimport

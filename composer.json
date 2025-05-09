@@ -1,5 +1,5 @@
 {
-    "name": "egerstudios/userimport-plugin",
+    "name": "artistro08/userimport-plugin",
     "type": "october-plugin",
     "description": "Import users into Rainlab Users-plugin",
     "require": {

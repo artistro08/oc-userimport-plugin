@@ -1,4 +1,4 @@
-<?php namespace EgerStudios\UserImport\Models;
+<?php namespace Artistro08\UserImport\Models;
 
 use Backend\Models\ImportModel;
 use RainLab\User\Models\User;

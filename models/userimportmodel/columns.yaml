@@ -1,4 +1,4 @@
-#plugins/egerstudios/userimport/models/userimportmodel/columns.yaml
+#plugins/artistro08/userimport/models/userimportmodel/columns.yaml
 columns:
     email:
         label: Email

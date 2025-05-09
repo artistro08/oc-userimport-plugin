@@ -1,7 +1,7 @@
 # User Import plugin for OctoberCMS
 Support for Rainlab User version 2 and 3
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/egerstudios/oc-userimport-plugin/blob/master/LICENSE.md)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/artistro08/oc-userimport-plugin/blob/master/LICENSE.md)
 
 Import files with user data into October CMS plugin [RainLab.User](http://octobercms.com/plugin/rainlab-user) plugin.
 
@@ -11,7 +11,7 @@ Import files with user data into October CMS plugin [RainLab.User](http://octobe
 
 ## Installation
 
-- Install the plugin [EgerStudios.UserImport](http://octobercms.com/plugin/egerstudios-userimport)
+- Install the plugin [Artistro08.UserImport](http://octobercms.com/plugin/artistro08-userimport)
 - Import users by navigating to Users -> import
 
 

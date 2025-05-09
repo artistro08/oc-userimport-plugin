@@ -1,4 +1,4 @@
-<?php namespace EgerStudios\UserImport;
+<?php namespace Artistro08\UserImport;
 
 use Backend;
 use Event;
@@ -22,7 +22,7 @@ class Plugin extends PluginBase
         return [
             'name'        => 'User Import',
             'description' => 'Import users from CSV with column mapping',
-            'author'      => 'EgerStudios',
+            'author'      => 'Artistro08',
             'icon'        => 'icon-users'
         ];
     }
@@ -52,10 +52,10 @@ class Plugin extends PluginBase
                     'order'       => 100,
                 ],
                 'import' => [
-                    'label'       => 'egerstudios.userimport::lang.label.import',
-                    'url'         => Backend::url('egerstudios/userimport/userimport/import'),
+                    'label'       => 'artistro08.userimport::lang.label.import',
+                    'url'         => Backend::url('artistro08/userimport/userimport/import'),
                     'icon'        => 'icon-sign-in',
-                    'permissions' => ['egerstudios.userimport.import'],
+                    'permissions' => ['artistro08.userimport.import'],
                     'order'       => 200,
                 ]
             ]);
@@ -70,7 +70,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'EgerStudios\UserImport\Components\MyComponent' => 'myComponent',
+            'Artistro08\UserImport\Components\MyComponent' => 'myComponent',
         ];
     }
 
@@ -80,9 +80,9 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'egerstudios.userimport.some_permission' => [
-                'tab' => 'egerstudios.userimport::lang.label.tab',
-                'label' => 'egerstudios.userimport::lang.label.permission',
+            'artistro08.userimport.some_permission' => [
+                'tab' => 'artistro08.userimport::lang.label.tab',
+                'label' => 'artistro08.userimport::lang.label.permission',
             ],
         ];
     }
