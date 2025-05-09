@@ -44,13 +44,6 @@ class Plugin extends PluginBase
         Event::listen('backend.menu.extendItems', function($manager)
         {
             $manager->addSideMenuItems('RainLab.User', 'user', [
-                'users' => [
-                    'label'       => 'rainlab.user::lang.users.menu_label',
-                    'url'         => Backend::url('rainlab/user/users'),
-                    'icon'        => 'icon-user',
-                    'permissions' => ['rainlab.users.*'],
-                    'order'       => 100,
-                ],
                 'import' => [
                     'label'       => 'artistro08.userimport::lang.label.import',
                     'url'         => Backend::url('artistro08/userimport/userimport/import'),
