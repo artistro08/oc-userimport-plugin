@@ -80,7 +80,6 @@ class UserImportModel extends ImportModel
                     'is_guest' => true,
                 ]);
 
-                $user->convertToRegistered();
                 
                 
                 
@@ -109,7 +108,10 @@ class UserImportModel extends ImportModel
                     if($this->isVersion2()) {
                         $user->attemptActivation($user->activation_code);
                     } else {
-                        $user->markEmailAsVerified();
+                        $user->forceFill([
+                            'activated_at' => $user->freshTimestamp()
+                        ]);;
+                        $user->save();
                     }
                 }
                 
