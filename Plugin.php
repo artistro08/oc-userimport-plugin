@@ -1,4 +1,5 @@
-<?php namespace Artistro08\UserImport;
+<?php
+namespace Artistro08\UserImport;
 
 use Backend;
 use Event;
@@ -12,8 +13,8 @@ use System\Classes\PluginBase;
 class Plugin extends PluginBase
 {
     public $require = ['RainLab.User'];
-    
-    
+
+
     /**
      * pluginDetails about this plugin.
      */
@@ -33,7 +34,7 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-        //
+        $this->registerConsoleCommand('artistro08.convert_guests', \Artistro08\UserImport\Console\ConvertGuests::class);
     }
 
     /**
@@ -41,8 +42,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        Event::listen('backend.menu.extendItems', function($manager)
-        {
+        Event::listen('backend.menu.extendItems', function ($manager) {
             $manager->addSideMenuItems('RainLab.User', 'user', [
                 'import' => [
                     'label'       => 'artistro08.userimport::lang.label.import',
@@ -74,7 +74,7 @@ class Plugin extends PluginBase
     {
         return [
             'artistro08.userimport.some_permission' => [
-                'tab' => 'artistro08.userimport::lang.label.tab',
+                'tab'   => 'artistro08.userimport::lang.label.tab',
                 'label' => 'artistro08.userimport::lang.label.permission',
             ],
         ];
