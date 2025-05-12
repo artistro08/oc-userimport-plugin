@@ -53,6 +53,10 @@ class Plugin extends PluginBase
                 ]
             ]);
         });
+        // Send Verification Email after registering
+        Event::listen('rainlab.user.register', function ($input, $user) {
+            $user->sendEmailVerificationNotification();
+        });
     }
 
     /**
